@@ -109,11 +109,11 @@
 
                                 <!-- Select -->
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="dateform">Tipo de Utilizador</label>
+                                    <label class="col-md-3 control-label" for="dateform">Turma</label>
                                     <div class="col-md-5">
                                         <select class="form-control">
-                                            @foreach($dadosPerfil[0] as $tipoUser)
-                                            <option>{{$tipoUser->nome}}</option>
+                                            @foreach($dadosPerfil[0] as $turmaUser)
+                                            <option>{{$turmaUser}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -130,31 +130,42 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg> Dados pessoais</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" action="" method="post">
-                        <fieldset>
-                            <!-- Nome input-->
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="name">Nome</label>
-                                <div class="col-md-5">
-                                    <input id="password" name="password" type="password" placeholder="Old Password" class="form-control" value="{{$dadosPerfil[1]->password}}">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg> Modificar Password</div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" action="" method="post">
+                            <fieldset>
+                                <!-- Nome input-->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="name">Sua Password</label>
+                                    <div class="col-md-5">
+                                        <input id="password" name="password" type="password" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <!-- Form actions -->
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-default btn-md pull-right">Modificar</button>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="name">Nova Password</label>
+                                    <div class="col-md-5">
+                                        <input id="password" name="password" type="password" class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                        </fieldset>
-                    </form>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="name">Repita a Password</label>
+                                    <div class="col-md-5">
+                                        <input id="password" name="password" type="password" class="form-control">
+                                    </div>
+                                </div>
+
+                                <!-- Form actions -->
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-default btn-md pull-right">Modificar</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>

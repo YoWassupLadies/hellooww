@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\TipoUser;
+use App\Turma;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,10 +12,10 @@ class PerfilController extends Controller
 {
     public function buscardados(){
 
-        $tiposUser = TipoUser::all();
+        $turmasUser = Turma::lists('nome', 'id');
         $dadosUser = Auth::User();
 
-        $dadosPerfil = [$tiposUser, $dadosUser];
+        $dadosPerfil = [$turmasUser, $dadosUser];
 
         return view('Admin/profile', compact('dadosPerfil'));
     }
