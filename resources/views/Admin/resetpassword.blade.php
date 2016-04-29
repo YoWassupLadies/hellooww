@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 
 @section('content')
-
     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
         <form role="search">
             <div class="form-group">
@@ -67,6 +66,7 @@
             <ol class="breadcrumb">
                 <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
                 <li class="active">Perfil</li>
+                <li class="active">Reset Password</li>
             </ol>
         </div><!--/.row-->
 
@@ -79,49 +79,40 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg> Dados pessoais</div>
+                    <div class="panel-heading"><svg class="glyph stroked key "><use xlink:href="#stroked-key"/></svg> Reset Password</div>
                     <div class="panel-body">
                         <form class="form-horizontal" action="" method="post">
                             <fieldset>
                                 <!-- Nome input-->
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="name">Nome</label>
+                                    <label class="col-md-3 control-label" for="suapassword">Sua Password Actual</label>
                                     <div class="col-md-5">
-                                        <h4>{{$dadosPerfil[1]->name}}</h4>
-                                        {{--<input id="name" name="name" type="text" placeholder="Nome" class="form-control" value="{{$dadosPerfil[1]->name}}">--}}
+                                        <input id="name" name="name" type="password" class="form-control" >
                                     </div>
                                 </div>
 
                                 <!-- Email input-->
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="assunto">Email</label>
+                                    <label class="col-md-3 control-label" for="novapassword">Nova Password</label>
                                     <div class="col-md-5">
-                                        <h4>{{$dadosPerfil[1]->email}}</h4>
+                                        <input id="name" name="name" type="password" class="form-control" >
                                     </div>
                                 </div>
 
                                 <!-- Data de criação -->
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="dateform">Utilizador desde</label>
+                                    <label class="col-md-3 control-label" for="novapassword2">Repita a Nova Password</label>
                                     <div class="col-md-5">
-                                        <h4>{{$dadosPerfil[1]->created_at}}</h4>
+                                        <input id="name" name="name" type="password" class="form-control" >
                                     </div>
                                 </div>
-
-                                <!-- Select -->
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="dateform">Turma</label>
-                                    <div class="col-md-5">
-                                        @foreach($dadosPerfil[0] as $turmaUser)
-                                            <h4>{{$turmaUser}}</h4>
-                                        @endforeach
-                                    </div>
-                                </div>
-
                                 <!-- Form actions -->
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <a href="{{url('resetpassword')}}" class="btn btn-default btn-md pull-right">Reset Password</a>
+                                        <div class="btn-toolbar">
+                                            <button type="submit" class="btn btn-primary btn-md pull-right">Confirmar</button>
+                                            <a href="{{url('perfil')}}" class="btn btn-default btn-md pull-right">Cancelar</a>
+                                        </div>
                                     </div>
                                 </div>
                             </fieldset>
@@ -131,4 +122,4 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection

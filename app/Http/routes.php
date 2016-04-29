@@ -36,6 +36,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/perfil', 'PerfilController@buscardados');
 
+    Route::get('/resetpassword', function(){
+        return view('Admin/resetpassword');
+    });
+
 });
 
 
